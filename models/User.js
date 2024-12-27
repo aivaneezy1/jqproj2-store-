@@ -13,7 +13,6 @@ const UserSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-    unique: true,
   }
 );
 
