@@ -1,9 +1,13 @@
 import express from "express";
 import Product from "../models/Products.js";
 export const getAllProducts = async (req, res) => {
+  const { featured } = req.query;
+  const queryObject = {};
   try {
-    const products = await Product.find({});
-    console.log(products);
+    if (featured) {
+      queryObject.featured = featured === "true" ? true : false;
+    }
+    const products = await Product.find(queryObject);
     return res.status(200).json(products);
   } catch (err) {
     return res.status(500).json({ message: err.message });
