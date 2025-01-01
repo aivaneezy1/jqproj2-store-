@@ -1,5 +1,6 @@
 import express from "express";
 import Product from "../models/Products.js";
+import { filePath } from "../lib/filePath.js";
 export const getAllProducts = async (req, res) => {
   const { featured } = req.query;
   const queryObject = {};
@@ -26,7 +27,7 @@ export const getProdudct = async (req, res) => {
 
 export const createProduct = async (req, res) => {
   const { name, price, featured, rating, company } = req.body;
-  console.log(name, price, featured, rating, company);
+
   try {
     const product = await Product.create({
       name: name,

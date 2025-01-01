@@ -7,6 +7,7 @@ import { registerRouter } from "./routes/register.js";
 import { userRouter } from "./routes/user.js";
 import { loginRouter } from "./routes/login.js";
 import { adminRouter } from "./routes/admin.js";
+
 dotenv.config();
 
 const app = express();
