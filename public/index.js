@@ -1,9 +1,15 @@
 const getAllProduct = async () => {
   const productList = $("#productItems");
+  const companyQuery = $("#company").val();
+  const featureQuery = $("#feature").val();
+  const priceQuery = $("#price").val();
+  console.log("price", priceQuery);
   try {
-    const res = await axios.get("http://localhost:8082/api/v1/products");
+    const res = await axios.get(
+      `http://localhost:8082/api/v1/products?featured=${featureQuery}&company=${companyQuery}&price=${priceQuery}`
+    );
 
-    const products = res.data;
+    const products = res.data.products;
     $("#productsLen").html(
       `<strong>${products.length} Products Found</strong>`
     );
@@ -23,7 +29,6 @@ const getAllProduct = async () => {
       </div>
     `
     );
-
     productList.html(productHTML);
   } catch (err) {
     console.log(err);
@@ -31,5 +36,11 @@ const getAllProduct = async () => {
 };
 
 $(function () {
+  // Load all products when the page loads
   getAllProduct();
+
+  // Listen for changes on the select element
+  $("#company,#feature, #price").on("change", function () {
+    getAllProduct();
+  });
 });
