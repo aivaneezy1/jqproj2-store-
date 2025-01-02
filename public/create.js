@@ -1,7 +1,7 @@
 const createProduct = async () => {
   const Product = $("#Product").val();
   const Price = parseInt($("#Price").val(), 10);
-  const Rating = parseFloat($("#Rating").val());
+  const Rating = $("#Rating").val();
   const Company = $("#Company").val();
   const Feature = $("#Feature").is(":checked");
 

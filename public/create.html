@@ -29,11 +29,24 @@
                 </div>
                 <div class="form-group mb-3">
                     <label for="Rating" class="form-label fw-bold">Rating</label>
-                    <input type="text" class="form-control" id="Rating" placeholder="Enter rating">
+                    <select name="Rating" id="Rating" class="form-select">
+                        <option value="">Select</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
                 </div>
                 <div class="form-group mb-3">
                     <label for="Company" class="form-label fw-bold">Company</label>
-                    <input type="text" class="form-control" id="Company" placeholder="Enter company">
+                    <select name="Company" id="Company" class="form-select">
+                        <option value="">Select</option>
+                        <option value="ikea">Ikea</option>
+                        <option value="liddy">Liddy</option>
+                        <option value="caressa">Caressa</option>
+                        <option value="marcos">Marcos</option>
+                    </select>
                 </div>
                 <div class="d-flex justify-content-between">
                     <button id="submit" type="submit" class="btn btn-success px-4">Create</button>

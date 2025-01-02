@@ -3,10 +3,11 @@ const getAllProduct = async () => {
   const companyQuery = $("#company").val();
   const featureQuery = $("#feature").val();
   const priceQuery = $("#price").val();
+  const ratingQuery = $("#rating").val();
   console.log("price", priceQuery);
   try {
     const res = await axios.get(
-      `http://localhost:8082/api/v1/products?featured=${featureQuery}&company=${companyQuery}&price=${priceQuery}`
+      `http://localhost:8082/api/v1/products?featured=${featureQuery}&company=${companyQuery}&price=${priceQuery}&rating=${ratingQuery}`
     );
 
     const products = res.data.products;
@@ -40,7 +41,7 @@ $(function () {
   getAllProduct();
 
   // Listen for changes on the select element
-  $("#company,#feature, #price").on("change", function () {
+  $("#company,#feature, #price, #rating").on("change", function () {
     getAllProduct();
   });
 });

@@ -2,14 +2,14 @@ import express from "express";
 import Product from "../models/Products.js";
 import { filePath } from "../lib/filePath.js";
 export const getAllProducts = async (req, res) => {
-  const { featured, company, price } = req.query;
+  const { featured, company, price, rating } = req.query;
   const queryObject = {};
   try {
     if (featured) {
       queryObject.featured = featured === "true" ? true : false;
     }
     if (company) {
-      queryObject.company = { $regex: company, $options: "i" };
+      queryObject.company = { $regex: `^${company}$`, $options: "i" };
     }
     if (price) {
       switch (price) {
@@ -29,6 +29,9 @@ export const getAllProducts = async (req, res) => {
           queryObject.price = { $gt: 500 };
           break;
       }
+    }
+    if (rating) {
+      queryObject.rating = rating;
     }
     const products = await Product.find(queryObject);
     return res.status(200).json({ products: products, len: products.length });
