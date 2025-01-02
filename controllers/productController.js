@@ -41,3 +41,27 @@ export const createProduct = async (req, res) => {
     return res.status(500).json({ message: err.message });
   }
 };
+
+export const editProduct = async (req, res) => {
+  const { name, price, featured, rating, company } = req.body;
+  const { id } = req.params;
+
+  try {
+    const response = await Product.findByIdAndUpdate(
+      { _id: id },
+      {
+        name: name,
+        price: price,
+        featured: featured,
+        rating: rating,
+        company: company,
+      },
+      {
+        new: true,
+      }
+    );
+    return res.status(200).json({ response });
+  } catch (err) {
+    return res.status(500).json({ message: err.message });
+  }
+};

@@ -15,7 +15,8 @@ const product = async () => {
           <p class="card-text">$${product.price}</p>
           <p class="card-text">Rating: ${product.rating}</p>
           <p class="card-text">Company: ${product.company}</p>
-          <a href="/" class="btn btn-primary">Home Page<a/>
+          <a href="edit.html?id=${product._id}&prod=${product.name}&pric=${product.price}&rat=${product.rating}&comp=${product.company}&feat=${product.featured}" class="btn btn-success">Edit Product<a/>
+          <a href="/" class="btn btn-primary">Home Page<a/> 
         </div>
       </div>
     `;
