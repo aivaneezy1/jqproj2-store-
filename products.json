@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Modern Chair",
+        "price": 150,
+        "featured": true,
+        "rating": 4.8,
+        "company": "ikea"
+    },
+    {
+        "name": "Stylish Sofa",
+        "price": 1200,
+        "featured": false,
+        "rating": 4.7,
+        "company": "caressa"
+    },
+    {
+        "name": "Office Desk",
+        "price": 300,
+        "featured": true,
+        "rating": 4.5,
+        "company": "liddy"
+    },
+    {
+        "name": "Classic Bed Frame",
+        "price": 800,
+        "featured": false,
+        "rating": 4.6,
+        "company": "marcos"
+    },
+    {
+        "name": "Dining Table Set",
+        "price": 650,
+        "featured": true,
+        "rating": 4.9,
+        "company": "ikea"
+    }
+]

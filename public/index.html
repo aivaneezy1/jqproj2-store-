@@ -13,10 +13,73 @@
 <body>
     <div class="d-flex flex-row justify-content-between align-items-center">
         <h1 class="text-primary">Store</h1>
-
         <div class="mx-2">
-            <a href="/login" class="btn btn-primary rounded-3">Login</a>
-            <a href="/register" class="btn btn-primary rounded-3">Register</a>
+            <a href="create.html" class="btn btn-primary rounded-3">Create</a>
+            <a href="/api/auth/login" class="btn btn-primary rounded-3">Login</a>
+            <a href="/api/auth/register" class="btn btn-primary rounded-3">Register</a>
+        </div>
+    </div>
+
+    <div class="bg-dark  p-5 mt-3 ">
+        <a href="/" class="text-decoration-none text-white">
+            <h2 class="text-start mx-5">Home</h2>
+        </a>
+    </div>
+    <div class="container mt-5 ">
+        <div class="row">
+            <div class="col-md-2 p-3 border rounded bg-light" style="max-height: 400px; overflow-y: auto;">
+                <div class="mb-3">
+                    <label for="feature" class="form-label fw-bold">Feature</label>
+                    <select name="feature" id="feature" class="form-select">
+                        <option value="">Select</option>
+                        <option value="true">True</option>
+                        <option value="false">False</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="price" class="form-label fw-bold">Price</label>
+                    <select name="price" id="price" class="form-select">
+                        <option value="">Select</option>
+                        <option value="10">$0-$10</option>
+                        <option value="50">$10-$50</option>
+                        <option value="100">$50-$100</option>
+                        <option value="500">$100-$500</option>
+                        <option value="500000">$500+</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="rating" class="form-label fw-bold">Rating</label>
+                    <select name="rating" id="rating" class="form-select">
+                        <option value="">Select</option>
+                        <option value="1">⭐</option>
+                        <option value="2">⭐⭐</option>
+                        <option value="3">⭐⭐⭐</option>
+                        <option value="4">⭐⭐⭐⭐</option>
+                        <option value="5">⭐⭐⭐⭐⭐</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="company" class="form-label fw-bold">Company</label>
+                    <select name="company" id="company" class="form-select">
+                        <option value="">Select</option>
+                        <option value="ikea">Ikea</option>
+                        <option value="liddy">Liddy</option>
+                        <option value="caressa">Caressa</option>
+                        <option value="marcos">Marcos</option>
+                    </select>
+                </div>
+
+
+            </div>
+
+            <div class="col-md-10">
+                <h4 id="productsLen" class="mb-2 text-secondary"></h4>
+                <div class="row" id="productItems">
+                </div>
+            </div>
         </div>
     </div>
 
